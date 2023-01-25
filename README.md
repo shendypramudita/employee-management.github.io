@@ -10,6 +10,11 @@ atau
 username : 'user' 
 password : 123
 
+## Cara menjalankan aplikasi
+- npm install
+
+- ng serve
+
 ## Dependency
 "@angular/animations": "^12.2.17",
 
