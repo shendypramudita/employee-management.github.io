@@ -12,7 +12,11 @@ password : 123
 
 ## Dependency
 "@angular/animations": "^12.2.17",
+
+
 "@angular/cdk": "^12.2.0",
+
+
 "@angular/common": "~12.2.0",
 "@angular/compiler": "~12.2.0",
 "@angular/core": "~12.2.0",
