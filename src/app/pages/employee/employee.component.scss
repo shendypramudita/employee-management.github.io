@@ -1,0 +1,13 @@
+.mat-paginator {
+    display: flex;
+    justify-content: center;
+}
+
+ngx-paginate ::ng-deep .page-entry {
+  background-color: black;
+  color: yellow;
+}
+ngx-paginate ::ng-deep .page-entry.active {
+  background-color: blue;
+  color: red;
+}

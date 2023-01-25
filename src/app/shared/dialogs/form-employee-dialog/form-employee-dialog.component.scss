@@ -1,0 +1,38 @@
+//start snackbar
+.snackbar {
+  max-width: 90% !important;
+  margin-left: auto !important; // center align from left
+  margin-right: auto !important; // center align from right
+  margin-bottom: 1rem !important;
+  padding: 10px !important; // spacing between the text and boundary
+  background-color: green;
+  color: white;
+
+  .mat-button-wrapper {
+      color: black !important; // action text color
+  }
+}
+
+::ng-deep .green-snackbar {
+  background: rgba(38, 45, 52, 0.5) !important;
+  color: white !important;
+  border-radius: 21px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 16px !important;
+  padding: 6px 10px !important;
+  min-height: 31px !important;
+}
+
+::ng-deep .green-snackbar .mat-simple-snackbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 20px;
+  opacity: 1;
+}
+
+::ng-deep .mat-snack-bar-container {
+  margin-top: 110px !important;
+}
+//end snackbar

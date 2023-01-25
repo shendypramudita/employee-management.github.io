@@ -1,0 +1,139 @@
+<!--modal content-->
+<div mat-dialog-title class="dialog-title text-right">
+  <button mat-icon-button aria-label="close dialog" mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<div class="mt-3 text-center">
+  <div class="mt-2 px-7 py-3">
+    <p class="text-xl font-bold text-gray-500">
+      DETAIL EMPLOYEE
+    </p>
+  </div>
+  <div class="items-center">
+
+    <div class="bg-card flex-1 p-4 mb-30">
+      <!-- strat content -->
+      <div class="bg-white-100 mt-2">
+
+          <div class="grid grid-cols-1 mt-4 text-left">
+              <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+                  <span class="text-red-500">*</span> Username
+              </label>
+
+              <div class="relative flex flex-wrap items-stretch">
+                  <mat-form-field class="w-full form-width-border">
+                    <input [readonly] matInput type="text" [(ngModel)]="UserName">
+                  </mat-form-field>
+              </div>
+          </div>
+
+           <div class="grid grid-cols-1 mt-4 text-left">
+            <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+                <span class="text-red-500">*</span> First Name
+            </label>
+
+            <div class="relative flex flex-wrap items-stretch">
+                <mat-form-field class="w-full form-width-border">
+                  <input [readonly] matInput type="text" [(ngModel)]="FirstName">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 mt-4 text-left">
+          <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+              <span class="text-red-500">*</span> Last Name
+          </label>
+
+          <div class="relative flex flex-wrap items-stretch">
+              <mat-form-field class="w-full form-width-border">
+                <input [readonly] matInput type="text"  [(ngModel)]="LastName">
+              </mat-form-field>
+          </div>
+      </div>
+
+          <div class="grid grid-cols-1 text-left">
+              <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+                  <span class="text-red-500">*</span> Email
+              </label>
+              <div class="relative flex flex-wrap items-stretch">
+                  <mat-form-field class="w-full form-width-border">
+                      <input [readonly] type="email" matInput [(ngModel)]="Email">
+                  </mat-form-field>
+              </div>
+          </div>
+
+          <div class="grid grid-cols-1 mt-4 text-left">
+            <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+                <span class="text-red-500">*</span> BirthDate
+            </label>
+
+            <div class="relative flex flex-wrap items-stretch">
+              <mat-form-field class="w-full form-width-border">
+                <input [readonly] type="text" matInput [(ngModel)]="BirthDate">
+            </mat-form-field>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 mt-4 text-left">
+          <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+              <span class="text-red-500">*</span> Basic Salary
+          </label>
+
+          <div class="relative flex flex-wrap items-stretch">
+              <mat-form-field class="w-full form-width-border">
+                  <input [readonly] matInput type="text" [(ngModel)]="BasicSalary" currencyMask [options]="{ prefix: 'Rp. ', thousands: '.' , precision: 0}">
+              </mat-form-field>
+          </div>
+      </div>
+
+      <div class="grid grid-cols-1 mt-4 text-left">
+        <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+            <span class="text-red-500">*</span> Status
+        </label>
+
+        <div class="relative flex flex-wrap items-stretch">
+            <mat-form-field class="w-full form-width-border">
+                <input [readonly] matInput type="text" [(ngModel)]="Status">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 mt-4 text-left">
+      <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+          <span class="text-red-500">*</span> Group
+      </label>
+
+      <div class="relative flex flex-wrap items-stretch">
+        <mat-form-field class="w-full form-width-border">
+          <input [readonly] type="text" matInput [(ngModel)]="Group">
+      </mat-form-field>
+      </div>
+  </div>
+
+  <div class="grid grid-cols-1 mt-4 text-left">
+    <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+        <span class="text-red-500">*</span> Description
+    </label>
+
+    <div class="relative flex flex-wrap items-stretch">
+      <mat-form-field class="w-full form-width-border">
+        <input [readonly] type="text" matInput [(ngModel)]="Description">
+    </mat-form-field>
+    </div>
+</div>
+        </div>
+        </div>
+
+    <div class="grid grid-cols-1">
+      <div class="items-center flex justify-center">
+          <button (click)="dismiss()" style="border-radius: 50px;" mat-flat-button
+              class="px-4 text-lg w-24 min-h-12 bg-green-500 text-white buttonHiApp border20">Oke</button>
+      </div>
+  </div>
+
+
+  </div>
+</div>
+

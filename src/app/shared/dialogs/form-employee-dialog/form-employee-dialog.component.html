@@ -1,0 +1,230 @@
+<!--modal content-->
+
+<div mat-dialog-title class="dialog-title text-right">
+  <button mat-icon-button aria-label="close dialog" mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+	<div class="text-center justify-center">
+		<div class="mt-2 px-7 py-3">
+			<p class="text-xl font-bold text-gray-500">
+				ADD EMPLOYEE
+			</p>
+		</div>
+		<div class="items-start">
+
+
+      <!-- strat content -->
+      <div class="bg-card flex-1 p-4 mb-30">
+        <!-- strat content -->
+        <div class="bg-white-100 mt-2">
+          <form [formGroup]="employeeForm" (ngSubmit)="onSubmitRequest()" #employeeNgForm="ngForm" *ngIf="employeeForm">
+
+            <div class="grid grid-cols-1 mt-4 text-left">
+                <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+                    <span class="text-red-500">*</span> Username
+                </label>
+
+                <div class="relative flex flex-wrap items-stretch">
+                    <mat-form-field class="w-full form-width-border">
+                        <input matInput type="text"  [formControlName]="'username'" [(ngModel)]="UserName">
+                    </mat-form-field>
+                    <div *ngIf="submitted">
+                      <mat-error *ngIf="employeeForm.get('username').hasError('required')" class="mt-2">
+                        Input Username is required
+                      </mat-error>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 mt-4 text-left">
+              <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+                  <span class="text-red-500">*</span> First Name
+              </label>
+
+              <div class="relative flex flex-wrap items-stretch">
+                  <mat-form-field class="w-full form-width-border">
+                      <input matInput type="text" [formControlName]="'first_name'" [(ngModel)]="FirstName">
+                  </mat-form-field>
+                  <div *ngIf="submitted">
+                    <mat-error *ngIf="employeeForm.get('first_name').hasError('required')" class="mt-2">
+                      Input Firstname is required
+                    </mat-error>
+                  </div>
+              </div>
+          </div>
+
+          <div class="grid grid-cols-1 mt-4 text-left">
+            <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+                <span class="text-red-500">*</span> Last Name
+            </label>
+
+            <div class="relative flex flex-wrap items-stretch">
+                <mat-form-field class="w-full form-width-border">
+                    <input matInput type="text" [formControlName]="'last_name'" [(ngModel)]="LastName">
+                </mat-form-field>
+                <div *ngIf="submitted">
+                  <mat-error *ngIf="employeeForm.get('last_name').hasError('required')" class="mt-2">
+                    Input Lastname is required
+                  </mat-error>
+                </div>
+            </div>
+        </div>
+
+            <div class="grid grid-cols-1 text-left">
+                <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+                    <span class="text-red-500">*</span> Email
+                </label>
+                <div class="relative flex flex-wrap items-stretch">
+                    <mat-form-field class="w-full form-width-border">
+                        <input type="email" matInput  [formControlName]="'email'"
+                        [(ngModel)]="Email"
+                        >
+                    </mat-form-field>
+                    <div *ngIf="submitted">
+                      <mat-error *ngIf="employeeForm.get('email').invalid || employeeForm.get('email').hasError('required')" class="mt-2">
+                        Email not valid
+                      </mat-error>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 mt-4 text-left">
+              <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+                  <span class="text-red-500">*</span> BirthDate
+              </label>
+
+              <div class="relative flex flex-wrap items-stretch">
+                  <mat-form-field class="w-full form-width-border">
+                      <input autocomplete="off" matInput [matDatepicker]="pickerDate"
+                                    [formControl]="birthdate" [max]="today" readonly
+                                    class="p-0 cursor-pointer" (click)="pickerDate.open()"
+                                    >
+
+                  <mat-datepicker #pickerDate></mat-datepicker>
+                  </mat-form-field>
+
+                  <div *ngIf="submitted">
+                    <mat-error *ngIf="employeeForm.get('birthdate').hasError('required')" class="mt-2">
+                      Input Birthdate is required
+                    </mat-error>
+                  </div>
+              </div>
+          </div>
+
+          <div class="grid grid-cols-1 mt-4 text-left">
+            <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+                <span class="text-red-500">*</span> Basic Salary
+            </label>
+
+            <div class="relative flex flex-wrap items-stretch">
+                <mat-form-field class="w-full form-width-border">
+                    <input matInput type="text" [formControlName]="'basic_salary'" [(ngModel)]="BasicSalary" currencyMask [options]="{ prefix: '', thousands: '.' , precision: 0}">
+                </mat-form-field>
+                <div *ngIf="submitted">
+                  <mat-error *ngIf="employeeForm.get('basic_salary').hasError('required')" class="mt-2">
+                    Input Basic Salary is required
+                  </mat-error>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 mt-4 text-left">
+          <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+              <span class="text-red-500">*</span> Status
+          </label>
+
+          <div class="relative flex flex-wrap items-stretch">
+              <mat-form-field class="w-full form-width-border">
+                  <input matInput type="text" [formControlName]="'status'" [(ngModel)]="Status">
+              </mat-form-field>
+              <div *ngIf="submitted">
+                <mat-error *ngIf="employeeForm.get('status').hasError('required')" class="mt-2">
+                  Input Status is required
+                </mat-error>
+              </div>
+          </div>
+      </div>
+
+      <div class="grid grid-cols-1 mt-4 text-left">
+        <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+            <span class="text-red-500">*</span> Group
+        </label>
+
+        <div class="relative flex flex-wrap items-stretch">
+            <mat-form-field class="w-full form-width-border">
+              <mat-select [formControl]="groupCtrl" #singleSelect>
+
+                <mat-option>
+                  <ngx-mat-select-search [formControl]="groupFilterCtrl"></ngx-mat-select-search>
+                </mat-option>
+
+                <mat-option *ngFor="let item of filteredGroups | async" [value]="item">
+
+                  {{item.name}}
+
+                </mat-option>
+
+              </mat-select>
+            </mat-form-field>
+            <!-- <div *ngIf="submitted">
+              <mat-error *ngIf="employeeForm.get('groupCtrl').hasError('required')" class="mt-2">
+                Input Group is required
+              </mat-error>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 mt-4 text-left">
+      <label class="block tracking-wide text-coldarkgray mb-2 text-md" for="grid-first-name">
+          <span class="text-red-500">*</span> Description
+      </label>
+
+      <div class="relative flex flex-wrap items-stretch">
+          <mat-form-field class="w-full form-width-border">
+              <!-- <input matInput type="text" [placeholder]="'Description'" [formControlName]="'description'" [(ngModel)]="Description"> -->
+              <input autocomplete="off" matInput [matDatepicker]="descDate"
+                                    [formControl]="description" [max]="today" readonly
+                                    class="p-0 cursor-pointer" (click)="descDate.open()"
+                                    >
+
+                  <mat-datepicker #descDate></mat-datepicker>
+          </mat-form-field>
+          <div *ngIf="submitted">
+            <mat-error *ngIf="employeeForm.get('description').hasError('required')" class="mt-2">
+              Input Description is required
+            </mat-error>
+          </div>
+      </div>
+  </div>
+
+  <div class="grid grid-cols-2 mt-4 text-center">
+    <div>
+      <button style="border-radius: 50px;" mat-flat-button type="submit"
+            class="px-4 text-lg w-24 min-h-12 bg-green-500 text-white rounded-full">
+            <span *ngIf="!employeeForm.disabled">
+              SAVE
+          </span>
+          <mat-progress-spinner *ngIf="employeeForm.disabled" [diameter]="24" [mode]="'indeterminate'">
+          </mat-progress-spinner>
+
+          </button>
+    </div>
+
+    <div>
+      <button style="border-radius: 50px;" (click)="dismiss()" mat-flat-button type="button"
+            class="px-4 text-lg w-24 min-h-12 bg-red-500 text-white rounded-full">
+            <span>
+              CANCEL
+          </span>
+
+          </button>
+    </div>
+
+  </div>
+        </form>
+          </div>
+          </div>
+		</div>
+	</div>
